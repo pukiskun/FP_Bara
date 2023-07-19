@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">
+        <a class="navbar-brand" href="#">
             <img src="{{ asset('your-logo.png') }}" alt="Logo">
         </a>
 
@@ -10,14 +10,29 @@
         </form>
 
         <div class="profile">
-            @if (Auth::check())
-                <a href="{{ route('profile') }}">
-                    <img src="{{ Auth::user()->avatar }}" alt="Profile Avatar">
-                </a>
-            @else
-                <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Login</a>
-                <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
-            @endif
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="userDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ asset('user-icon.png') }}" alt="User Icon">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    @if (Auth::check())
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <form action="#" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <li><a class="dropdown-item" href="#">Login</a></li>
+                        <li><a class="dropdown-item" href="#">Register</a></li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

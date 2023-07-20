@@ -6,6 +6,10 @@
                 <img src="{{ Vite::asset('resources/images/BaRa.png') }}" alt="Logo" class="img-fluid" id="logo">
             </a>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9c5caa45deb2305dd0a8b0944f665766f04b5fa
             <form class="d-flex mx-auto">
                 <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -30,6 +34,10 @@
                                 </form>
                             </li>
                         @else
+<<<<<<< HEAD
+=======
+                            <li><a class="dropdown-item" href="{{ route('admin.index') }}">Article</a></li>
+>>>>>>> e9c5caa45deb2305dd0a8b0944f665766f04b5fa
                             <li><a class="dropdown-item" href="#">Login</a></li>
                             <li><a class="dropdown-item" href="#">Register</a></li>
                         @endif

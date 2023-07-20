@@ -14,6 +14,7 @@ initial-scale=1.0">
     @include('layouts.nav')
     @yield('content')
     @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
 </body>
 
 </html>
